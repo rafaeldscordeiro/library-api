@@ -1,7 +1,7 @@
 package com.rafaelprojetos.libraryapi.service;
 
 import com.rafaelprojetos.libraryapi.model.entity.Book;
-import com.rafaelprojetos.libraryapi.service.impl.BooKServiceImpl;
+import com.rafaelprojetos.libraryapi.service.impl.BookServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -19,7 +19,7 @@ public class BookServiceTest {
 
     @BeforeEach
     public void setUP(){
-        this.service = new BooKServiceImpl();
+        this.service = new BookServiceImpl();
 
     }
 

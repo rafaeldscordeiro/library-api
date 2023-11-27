@@ -1,9 +1,9 @@
 package com.rafaelprojetos.libraryapi.service.impl;
 
 import com.rafaelprojetos.libraryapi.model.entity.Book;
-import com.rafaelprojetos.libraryapi.service.BookService;
+import com.rafaelprojetos.libraryapi.model.repository.BookRepository;
 
-public class BooKServiceImpl implements BookService {
+public class BookServiceImpl implements com.rafaelprojetos.libraryapi.model.repository.BookRepository {
 
 
     private BookRepository repository;
