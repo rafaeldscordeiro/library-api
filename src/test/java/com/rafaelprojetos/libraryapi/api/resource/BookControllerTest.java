@@ -57,7 +57,7 @@ public class BookControllerTest {
         mvc
                 .perform(request)
                 .andExpect( status().isCreated() )
-                .andExpect( jsonPath("id").isNotEmpty() )
+                .andExpect( jsonPath("id").value(11L) )
                 .andExpect( jsonPath("title").value(dto.getTitle()) )
                 .andExpect( jsonPath("author").value(dto.getAuthor()) )
                 .andExpect( jsonPath("isbn").value(dto.getIsbn()) )
