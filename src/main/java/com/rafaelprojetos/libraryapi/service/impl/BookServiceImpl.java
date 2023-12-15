@@ -1,5 +1,6 @@
 package com.rafaelprojetos.libraryapi.service.impl;
 
+import com.rafaelprojetos.libraryapi.exception.BusinessException;
 import com.rafaelprojetos.libraryapi.model.entity.Book;
 import com.rafaelprojetos.libraryapi.model.repository.BookRepository;
 import com.rafaelprojetos.libraryapi.service.BookService;
@@ -17,6 +18,9 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public Book save(Book book) {
+        if(repository.existsByIsbn(book.getIsbn()) ){
+            throw new BusinessException("Isbn ja cadastrado");
+        }
         return repository.save(book);
     }
 }
