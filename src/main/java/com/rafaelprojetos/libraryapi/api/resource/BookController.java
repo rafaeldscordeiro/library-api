@@ -2,6 +2,7 @@ package com.rafaelprojetos.libraryapi.api.resource;
 
 import com.rafaelprojetos.libraryapi.api.dto.BookDTO;
 import com.rafaelprojetos.libraryapi.api.exception.ApiErros;
+import com.rafaelprojetos.libraryapi.exception.BusinessException;
 import com.rafaelprojetos.libraryapi.model.entity.Book;
 import com.rafaelprojetos.libraryapi.service.BookService;
 import org.modelmapper.ModelMapper;
@@ -40,5 +41,11 @@ public class BookController {
     public ApiErros handleValidationExceptions(MethodArgumentNotValidException ex) {
         BindingResult bindingResult = ex.getBindingResult();
         return new ApiErros(bindingResult);
+    }
+
+    @ExceptionHandler(BusinessException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public ApiErros handleBusinessException(BusinessException ex) {
+        return new ApiErros(ex);
     }
 }
