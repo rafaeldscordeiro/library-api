@@ -60,5 +60,4 @@ public class BookRepositoryTest {
         //
         assertThat(foundBook.isPresent()).isTrue();
     }
-
 }
