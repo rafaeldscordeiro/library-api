@@ -4,8 +4,10 @@ import com.rafaelprojetos.libraryapi.exception.BusinessException;
 import com.rafaelprojetos.libraryapi.model.entity.Book;
 import com.rafaelprojetos.libraryapi.model.repository.BookRepository;
 import com.rafaelprojetos.libraryapi.service.BookService;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
+import org.springframework.data.domain.Pageable;
 import java.util.Optional;
 
 @Service
@@ -47,4 +49,10 @@ public class BookServiceImpl implements BookService {
         }
         return this.repository.save(book);
     }
+
+    @Override
+    public Page<Book> find(Book filter, Pageable pageRequest) {
+        return null;
+    }
 }
+//

@@ -44,7 +44,7 @@ public class BookServiceTest {
                 Book.builder()
                         .id(11L)
                         .isbn("123")
-                        .title("As Aventuras")
+                        .title("As aventuras")
                         .author("Fulano")
                         .build());
 
@@ -54,12 +54,12 @@ public class BookServiceTest {
         //verificacao
         assertThat(savedBook.getId()).isNotNull();
         assertThat(savedBook.getIsbn()).isEqualTo("123");
-        assertThat(savedBook.getTitle()).isEqualTo("As Aventuras");
+        assertThat(savedBook.getTitle()).isEqualTo("As aventuras");
         assertThat(savedBook.getAuthor()).isEqualTo("Fulano");
     }
 
     private Book createValidBook() {
-        return Book.builder().isbn("123").author("Fulano").title("As Aventuras").build();
+        return Book.builder().isbn("123").author("Fulano").title("As aventuras").build();
     }
 
     @Test
